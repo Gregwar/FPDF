@@ -1,41 +1,37 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<HTML>
-<HEAD>
-<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=ISO-8859-1">
-<TITLE>Header</TITLE>
-<LINK TYPE="text/css" REL="stylesheet" HREF="../fpdf.css">
-</HEAD>
-<BODY>
-<H2>Header</H2>
-<TT>Header()</TT>
-<H4 CLASS='st'>Versione</H4>
-1.0
-<H4 CLASS='st'>Descrizione</H4>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Header</title>
+<link type="text/css" rel="stylesheet" href="../fpdf.css">
+</head>
+<body>
+<h1>Header</h1>
+<code>Header()</code>
+<h2>Descrizione</h2>
 Questo metodo viene utilizzato per disegnare l'intestazione della pagina. Viene chiamato automaticamente
 da AddPage() e non dovrebbe venire chiamato direttamente dall'applicazione. L'implementazione in FPDF
 è lasciata vuota, quindi bisogna subclassarla e sovrascriverne il metodo se si desidera un processo particolare.
-<H4 CLASS='st'>Esempio</H4>
-<DIV STYLE="background-color:#E0E0E0; padding:3px; margin-top:1.2em; margin-bottom:1.2em">
-<TT>
-class PDF extends FPDF<BR>
-{<BR>
-function Header()<BR>
-{<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;//Seleziona Arial grassetto 15<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;$this-&gt;SetFont('Arial','B',15);<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;//Muove verso destra<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;$this-&gt;Cell(80);<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;//Titolo in riquadro<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;$this-&gt;Cell(30,10,'Title',1,0,'C');<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;//Interruzione di linea<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;$this-&gt;Ln(20);<BR>
-}<BR>
+<h2>Esempio</h2>
+<div class="doc-source">
+<pre><code>class PDF extends FPDF
+{
+function Header()
+{
+    //Seleziona Arial grassetto 15
+    $this-&gt;SetFont('Arial','B',15);
+    //Muove verso destra
+    $this-&gt;Cell(80);
+    //Titolo in riquadro
+    $this-&gt;Cell(30,10,'Title',1,0,'C');
+    //Interruzione di linea
+    $this-&gt;Ln(20);
 }
-</TT>
-</DIV>
-<H4 CLASS='st'>Vedi anche</H4>
-<A HREF="footer.htm">Footer()</A>.
-<HR STYLE="margin-top:1.5em">
-<DIV STYLE="text-align:center"><A HREF="index.htm">Indice</A></DIV>
-</BODY>
-</HTML>
+}</code></pre>
+</div>
+<h2>Vedi anche</h2>
+<a href="footer.htm">Footer()</a>.
+<hr style="margin-top:1.5em">
+<div style="text-align:center"><a href="index.htm">Indice</a></div>
+</body>
+</html>

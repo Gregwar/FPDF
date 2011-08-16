@@ -1,16 +1,14 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<HTML>
-<HEAD>
-<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=ISO-8859-1">
-<TITLE>SetDisplayMode</TITLE>
-<LINK TYPE="text/css" REL="stylesheet" HREF="../fpdf.css">
-</HEAD>
-<BODY>
-<H2>SetDisplayMode</H2>
-<TT>SetDisplayMode(<B>mixed</B> zoom [, <B>string</B> layout])</TT>
-<H4 CLASS='st'>Versione</H4>
-1.2
-<H4 CLASS='st'>Descrizione</H4>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>SetDisplayMode</title>
+<link type="text/css" rel="stylesheet" href="../fpdf.css">
+</head>
+<body>
+<h1>SetDisplayMode</h1>
+<code>SetDisplayMode(<b>mixed</b> zoom [, <b>string</b> layout])</code>
+<h2>Descrizione</h2>
 Definisce la modalità in cui il documento verrà mostrato sul viewer. E' possibile impostare il
 livello dello zoom: le pagine possono essere mostrate interamente sullo schermo, a tutta pagina,
 utilizzare le dimensioni reali, rappresentate in scala con un fattore dello zoom specifico oppure
@@ -19,9 +17,10 @@ E' possibile specificare anche il layout di pagina: una per volta, visualizzazio
 colonne o default del viewer.
 <BR>
 Per default, i documenti utilizzano la modalità a tutta pagina e a visualizzazione continua.
-<H4 CLASS='st'>Parametri</H4>
-<TT><U>zoom</U></TT>
-<BLOCKQUOTE>
+<h2>Parametri</h2>
+<dl class="param">
+<dt><code>zoom</code></dt>
+<dd>
 Lo zoom da usare. Può essere uno dei seguenti valori di stringa:
 <UL>
 <LI><TT>fullpage</TT>: mostra a schermo l'intera pagina
@@ -30,9 +29,9 @@ Lo zoom da usare. Può essere uno dei seguenti valori di stringa:
 <LI><TT>default</TT>: utilizza la modalità di default del viewer
 </UL>
 o un numero indicante il livello dello zoom da usare.
-</BLOCKQUOTE>
-<TT><U>layout</U></TT>
-<BLOCKQUOTE>
+</dd>
+<dt><code>layout</code></dt>
+<dd>
 Il layout di pagina. Possibili valori sono:
 <UL>
 <LI><TT>single</TT>: mostra una pagina per volta
@@ -41,8 +40,9 @@ Il layout di pagina. Possibili valori sono:
 <LI><TT>default</TT>: utilizza la modalità di default del viewer
 </UL>
 Il valore di default è <TT>continuous</TT>.
-</BLOCKQUOTE>
-<HR STYLE="margin-top:1.5em">
-<DIV STYLE="text-align:center"><A HREF="index.htm">Indice</A></DIV>
-</BODY>
-</HTML>
+</dd>
+</dl>
+<hr style="margin-top:1.5em">
+<div style="text-align:center"><a href="index.htm">Indice</a></div>
+</body>
+</html>

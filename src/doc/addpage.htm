@@ -1,16 +1,14 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<HTML>
-<HEAD>
-<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=ISO-8859-1">
-<TITLE>AddPage</TITLE>
-<LINK TYPE="text/css" REL="stylesheet" HREF="../fpdf.css">
-</HEAD>
-<BODY>
-<H2>AddPage</H2>
-<TT>AddPage([<B>string</B> orientation])</TT>
-<H4 CLASS='st'>Versione</H4>
-1.0
-<H4 CLASS='st'>Descrizione</H4>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>AddPage</title>
+<link type="text/css" rel="stylesheet" href="../fpdf.css">
+</head>
+<body>
+<h1>AddPage</h1>
+<code>AddPage([<b>string</b> orientation ,[ <b>mixed</b> format]])</code>
+<h2>Descrizione</h2>
 Aggiunge una nuova pagina al documento. Se è già presente una pagina viene chiamato prima il
 metodo Footer() per inserire il piè d ipagina. Quindi viene aggiunta la pagina, la posizione
 corrente viene impostata nell'angolo superiore sinistro, tenendo conto del margine superiore e
@@ -22,22 +20,40 @@ colori e larghezza di riga.
 <BR>
 L'origine del sistema di coordinate è nell'angolo superiore sinistro e l'incremento delle
 ordinate fa muovere verso il basso.
-<H4 CLASS='st'>Parametri</H4>
-<TT><U>orientation</U></TT>
-<BLOCKQUOTE>
+<h2>Parametri</h2>
+<dl class="param">
+<dt><code>orientation</code></dt>
+<dd>
 Orientamento della pagina. Possibili valori sono (case insensitive):
-<UL>
-<LI><TT>P</TT> o <TT>Portrait</TT>
-<LI><TT>L</TT> o <TT>Landscape</TT>
-</UL>
+<ul>
+<li><code>P</code> o <code>Portrait</code></li>
+<li><code>L</code> o <code>Landscape</code></li>
+</ul>
 Il valore di default è quello passato dal costruttore.
-</BLOCKQUOTE>
-<H4 CLASS='st'>Vedi anche</H4>
-<A HREF="fpdf.htm">FPDF()</A>,
-<A HREF="header.htm">Header()</A>,
-<A HREF="footer.htm">Footer()</A>,
-<A HREF="setmargins.htm">SetMargins()</A>.
-<HR STYLE="margin-top:1.5em">
-<DIV STYLE="text-align:center"><A HREF="index.htm">Indice</A></DIV>
-</BODY>
-</HTML>
+</dd>
+<dt><code>format</code></dt>
+<dd>
+Il formato utilizzato per la pagina. Può essere uno dei seguenti valori (case insensitive):
+<ul>
+<li><code>A3</code></li>
+<li><code>A4</code></li>
+<li><code>A5</code></li>
+<li><code>Letter</code></li>
+<li><code>Legal</code></li>
+</ul>
+o un formato personalizzato nella forma di array bidimensionale contenente la larghezza e
+l'altezza (espressa nell'unità di misura data da <TT>unit</TT>).
+<BR>
+<BR>
+Il valore di default è <TT>A4</TT>.
+</dd>
+</dl>
+<h2>Vedi anche</h2>
+<a href="fpdf.htm">FPDF()</a>,
+<a href="header.htm">Header()</a>,
+<a href="footer.htm">Footer()</a>,
+<a href="setmargins.htm">SetMargins()</a>.
+<hr style="margin-top:1.5em">
+<div style="text-align:center"><a href="index.htm">Indice</a></div>
+</body>
+</html>
