@@ -1,3 +1,4 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <HTML>
 <HEAD>
 <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=ISO-8859-1">
@@ -18,9 +19,7 @@ Questo metodo viene chiamato automaticamente e non dovrebbe venire chiamato dire
 dall'applicazione.
 <H4 CLASS='st'>Esempio</H4>
 Il metodo viene sovrascritto in una classe ereditata allo scopo di ottenere un layout su 3 colonne:
-<BR>
-<BR>
-<TABLE WIDTH="100%" BGCOLOR="#E0E0E0"><TR><TD>
+<DIV STYLE="background-color:#E0E0E0; padding:3px; margin-top:1.2em; margin-bottom:1.2em">
 <TT>
 class PDF extends FPDF<BR>
 {<BR>
@@ -54,18 +53,16 @@ function AcceptPageBreak()<BR>
 }<BR>
 <BR>
 $pdf=new PDF();<BR>
-$pdf-&gt;Open();<BR>
 $pdf-&gt;AddPage();<BR>
 $pdf-&gt;SetFont('Arial','',12);<BR>
 for($i=1;$i&lt;=300;$i++)<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;$pdf-&gt;Cell(0,5,"Line $i",0,1);<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;$pdf-&gt;Cell(0,5,&quot;Line $i&quot;,0,1);<BR>
 $pdf-&gt;Output();
 </TT>
-</TD></TR></TABLE><BR>
+</DIV>
 <H4 CLASS='st'>Vedi anche</H4>
 <A HREF="setautopagebreak.htm">SetAutoPageBreak()</A>.
-<H6></H6>
-<HR>
-<DIV ALIGN="CENTER"><A HREF="index.htm">Indice</A></DIV>
+<HR STYLE="margin-top:1.5em">
+<DIV STYLE="text-align:center"><A HREF="index.htm">Indice</A></DIV>
 </BODY>
 </HTML>

@@ -1,3 +1,4 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <HTML>
 <HEAD>
 <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=ISO-8859-1">
@@ -23,26 +24,19 @@ pagina in pagina.
 Se si vuole solo cambiare la dimensione del font, è più semplice chiamare SetFontSize().
 <BR>
 <BR>
-<B>Nota: </B>per i fonts standard, i files con la metrica dei fonts deve essere accessibile. Per
-questo scopo ci sono tre possibilità:
-<BR>
-<BR>
+<B>Nota: </B>i files con la metrica dei fonts devono essere accessibili. Vengono ricercati rispettivamente:
 <UL>
-<LI>Si trovano nella directory corrente (quella in cui risiede lo script in esecuzione)
-<BR>
-<LI>Si trovano in una delle directories definite dal parametro <TT>include_path</TT>
-<BR>
-<LI>Si trovano nella directory definita dalla costante <TT>FPDF_FONTPATH</TT>
+<LI>Nella directory definita dalla costante <TT>FPDF_FONTPATH</TT> (se la costante esiste)
+<LI>Nella directory delle fonts che si trova nella stessa directory del file fpdf.php (se la directory esiste)
+<LI>In tutte le directories accessibili tramite la direttiva <TT>include()</TT>
 </UL>
-Esempio per l'ultimo caso (notare lo slash di chiusura):
-<BR>
-<BR>
-<TABLE WIDTH="100%" BGCOLOR="#E0E0E0"><TR><TD>
+Esempio per il caso in cui venga definita la costante <TT>FPDF_FONTPATH</TT> (notare lo slash di chiusura):
+<DIV STYLE="background-color:#E0E0E0; padding:3px; margin-top:1.2em; margin-bottom:1.2em">
 <TT>
 define('FPDF_FONTPATH','/home/www/font/');<BR>
 require('fpdf.php');
 </TT>
-</TD></TR></TABLE><BR>
+</DIV>
 Se non viene trovato il file corrispondente a quello richiesto, verrà generato l'errore
 "Could not include font metric file".
 <H4 CLASS='st'>Parametri</H4>
@@ -52,7 +46,7 @@ Famiglia del font. Può essere sia un nome definito da AddFont() o una delle fami
 insensitive):
 <UL>
 <LI><TT>Courier</TT> (fixed-width)
-<LI><TT>Helvetica<TT> o </TT>Arial</TT> (sinonimi; sans serif)
+<LI><TT>Helvetica</TT> o <TT>Arial</TT> (sinonimi; sans serif)
 <LI><TT>Times</TT> (serif)
 <LI><TT>Symbol</TT> (symbolic)
 <LI><TT>ZapfDingbats</TT> (symbolic)
@@ -79,7 +73,7 @@ Il valore di default è la dimensione corrente. Se non è stata specificata nessun
 del documento, viene preso il valore 12.
 </BLOCKQUOTE>
 <H4 CLASS='st'>Esempio</H4>
-<TABLE WIDTH="100%" BGCOLOR="#E0E0E0"><TR><TD>
+<DIV STYLE="background-color:#E0E0E0; padding:3px; margin-top:1.2em; margin-bottom:1.2em">
 <TT>
 //Times normale 12<BR>
 $pdf-&gt;SetFont('Times');<BR>
@@ -90,15 +84,14 @@ $pdf-&gt;SetFont('');<BR>
 //Times grassetto, corsivo e sottolineato 14<BR>
 $pdf-&gt;SetFont('Times','BIU');
 </TT>
-</TD></TR></TABLE><BR>
+</DIV>
 <H4 CLASS='st'>Vedi anche</H4>
 <A HREF="addfont.htm">AddFont()</A>,
 <A HREF="setfontsize.htm">SetFontSize()</A>,
 <A HREF="cell.htm">Cell()</A>,
 <A HREF="multicell.htm">MultiCell()</A>,
 <A HREF="write.htm">Write()</A>.
-<H6></H6>
-<HR>
-<DIV ALIGN="CENTER"><A HREF="index.htm">Indice</A></DIV>
+<HR STYLE="margin-top:1.5em">
+<DIV STYLE="text-align:center"><A HREF="index.htm">Indice</A></DIV>
 </BODY>
 </HTML>
