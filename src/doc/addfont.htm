@@ -7,44 +7,45 @@
 <BODY>
 <H2>AddFont</H2>
 <TT>AddFont(<B>string</B> family [, <B>string</B> style [, <B>string</B> file]])</TT>
-<H4>Version</H4>
+<H4 CLASS='st'>Versione</H4>
 1.5
-<H4>Description</H4>
-Imports a TrueType font and make it available. It is necessary to generate a font definition file
-first with the makefont.php utility.
+<H4 CLASS='st'>Descrizione</H4>
+Importa un font TrueType o Type1 e lo rende disponibile. E' necessario generare prima un file di
+definizione di font con la utility makefont.php.
 <BR>
-The definition file (and the font file itself when embedding) must be present either in the
-current directory or in the one indicated by <TT>FPDF_FONTPATH</TT> if the constant is defined.
-If it could not be found, the error "Could not include font definition file" is generated.
-<H4>Parameters</H4>
+Il file di definizione (e lo stesso file del font quando compreso) deve essere presente o nella
+directory corrente o in una directory indicata in <TT>FPDF_FONTPATH</TT> se la costante è definita.
+Se non può essere trovato, viene generato l'errore "Could not include font definition file".
+<H4 CLASS='st'>Parametri</H4>
 <TT><U>family</U></TT>
 <BLOCKQUOTE>
-Font family. The name can be chosen arbitrarily.
+Famiglia del font. Il nome può essere scelto arbitrariamente. Se viene indicato un nome di una famiglia
+standard, verrà sovrascritto il font corrispondente.
 </BLOCKQUOTE>
 <TT><U>style</U></TT>
 <BLOCKQUOTE>
-Font style. Possible values are (case insensitive):
+Stile del font. Possibili valori sono (case insensitive):
 <UL>
-<LI>empty string: regular
-<LI><TT>B</TT>: bold
-<LI><TT>I</TT>: italic
-<LI><TT>BI</TT> or <TT>IB</TT>: bold italic
+<LI>stringa vuota: normale
+<LI><TT>B</TT>: grassetto
+<LI><TT>I</TT>: corsivo
+<LI><TT>BI</TT> o <TT>IB</TT>: grassetto corsivo
 </UL>
-The default value is regular.
+Il valore di default è normale.
 </BLOCKQUOTE>
 <TT><U>file</U></TT>
 <BLOCKQUOTE>
-The font definition file.
+Il file di definizione del font.
 <BR>
-By default, the name is built from the family and style, in lower case with no space.
+Per default, il nome viene costruito dalla famiglia e dallo stile, in minuscolo e senza spazi.
 </BLOCKQUOTE>
-<H4>Example</H4>
+<H4 CLASS='st'>Esempio</H4>
 <TABLE WIDTH="100%" BGCOLOR="#E0E0E0"><TR><TD>
 <TT>
 $pdf-&gt;AddFont('Comic','I');
 </TT>
 </TD></TR></TABLE><BR>
-is equivalent to:
+è equivalente a:
 <BR>
 <BR>
 <TABLE WIDTH="100%" BGCOLOR="#E0E0E0"><TR><TD>
@@ -52,10 +53,10 @@ is equivalent to:
 $pdf-&gt;AddFont('Comic','I','comici.php');
 </TT>
 </TD></TR></TABLE><BR>
-<H4>See also</H4>
+<H4 CLASS='st'>Vedi anche</H4>
 <A HREF="setfont.htm">SetFont()</A>.
 <H6></H6>
 <HR>
-<DIV ALIGN="CENTER"><A HREF="index.htm">Index</A></DIV>
+<DIV ALIGN="CENTER"><A HREF="index.htm">Indice</A></DIV>
 </BODY>
 </HTML>

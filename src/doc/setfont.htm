@@ -7,33 +7,34 @@
 <BODY>
 <H2>SetFont</H2>
 <TT>SetFont(<B>string</B> family [, <B>string</B> style [, <B>float</B> size]])</TT>
-<H4>Version</H4>
+<H4 CLASS='st'>Versione</H4>
 1.0
-<H4>Description</H4>
-Sets the font used to print character strings. It is mandatory to call this method
-at least once before printing text or the resulting document would not be valid.
+<H4 CLASS='st'>Descrizione</H4>
+Imposta il font utilizzato per stampare stringhe di caratteri. E' obbligatorio chiamare questo
+metodo almeno una volta prima di stampare del testo oppure il documento risultante potrebbe non
+essere valido.
 <BR>
-The font can be either a standard one or a font added via the AddFont() method. Standard fonts
-use Windows encoding cp1252 (Western Europe).
+Il font può essere sia uno standard oppure uno aggiunto tramite il metodo AddFont(). I fonts
+Standard utilizzano la codifica Windows cp1252 (Western Europe).
 <BR>
-The method can be called before the first page is created and the font is retained from page
-to page.
+Il metodo può essere chiamato prima della creazione della prima pagina per mantenere il font di
+pagina in pagina.
 <BR>
-If you just wish to change the current font size, it is simpler to call SetFontSize().
+Se si vuole solo cambiare la dimensione del font, è più semplice chiamare SetFontSize().
 <BR>
 <BR>
-<B>Note: </B>for the standard fonts, the font metric files must be accessible. There are three
-possibilities for this:
+<B>Nota: </B>per i fonts standard, i files con la metrica dei fonts deve essere accessibile. Per
+questo scopo ci sono tre possibilità:
 <BR>
 <BR>
 <UL>
-<LI>They are in the current directory (the one where the running script lies)
+<LI>Si trovano nella directory corrente (quella in cui risiede lo script in esecuzione)
 <BR>
-<LI>They are in one of the directories defined by the <TT>include_path</TT> parameter
+<LI>Si trovano in una delle directories definite dal parametro <TT>include_path</TT>
 <BR>
-<LI>They are in the directory defined by the <TT>FPDF_FONTPATH</TT> constant
+<LI>Si trovano nella directory definita dalla costante <TT>FPDF_FONTPATH</TT>
 </UL>
-Example for the last case (note the trailing slash):
+Esempio per l'ultimo caso (notare lo slash di chiusura):
 <BR>
 <BR>
 <TABLE WIDTH="100%" BGCOLOR="#E0E0E0"><TR><TD>
@@ -42,55 +43,55 @@ define('FPDF_FONTPATH','/home/www/font/');<BR>
 require('fpdf.php');
 </TT>
 </TD></TR></TABLE><BR>
-If the file corresponding to the requested font is not found, the error "Could not include
-font metric file" is generated.
-<H4>Parameters</H4>
+Se non viene trovato il file corrispondente a quello richiesto, verrà generato l'errore
+"Could not include font metric file".
+<H4 CLASS='st'>Parametri</H4>
 <TT><U>family</U></TT>
 <BLOCKQUOTE>
-Family font. It can be either a name defined by AddFont() or one of the standard families (case
+Famiglia del font. Può essere sia un nome definito da AddFont() o una delle famiglie standard (case
 insensitive):
 <UL>
 <LI><TT>Courier</TT> (fixed-width)
-<LI><TT>Helvetica<TT> or </TT>Arial</TT> (synonymous; sans serif)
+<LI><TT>Helvetica<TT> o </TT>Arial</TT> (sinonimi; sans serif)
 <LI><TT>Times</TT> (serif)
 <LI><TT>Symbol</TT> (symbolic)
 <LI><TT>ZapfDingbats</TT> (symbolic)
 </UL>
-It is also possible to pass an empty string. In that case, the current family is retained.
+E' anche possibile passare una stringa vuota. In questo caso, viene conservata la famiglia corrente.
 </BLOCKQUOTE>
 <TT><U>style</U></TT>
 <BLOCKQUOTE>
-Font style. Possible values are (case insensitive):
+Stile del font. Possibili valori sono (case insensitive):
 <UL>
-<LI>empty string: regular
-<LI><TT>B</TT>: bold
-<LI><TT>I</TT>: italic
-<LI><TT>U</TT>: underline
+<LI>stringa vuota: normale
+<LI><TT>B</TT>: grassetto
+<LI><TT>I</TT>: corsivo
+<LI><TT>U</TT>: sottolineato
 </UL>
-or any combination. The default value is regular.
-Bold and italic styles do not apply to <TT>Symbol</TT> and <TT>ZapfDingbats</TT>.
+o qualsiasi combinazione. Il valore di default è normale.
+Non è possibile applicare gli stili grassetto e corsivo a <TT>Symbol</TT> e <TT>ZapfDingbats</TT>.
 </BLOCKQUOTE>
 <TT><U>size</U></TT>
 <BLOCKQUOTE>
-Font size in points.
+Dimensione del font in punti.
 <BR>
-The default value is the current size. If no size has been specified since the beginning of
-the document, the value taken is 12.
+Il valore di default è la dimensione corrente. Se non è stata specificata nessuna dimensione dall'inizio
+del documento, viene preso il valore 12.
 </BLOCKQUOTE>
-<H4>Example</H4>
+<H4 CLASS='st'>Esempio</H4>
 <TABLE WIDTH="100%" BGCOLOR="#E0E0E0"><TR><TD>
 <TT>
-//Times regular 12<BR>
+//Times normale 12<BR>
 $pdf-&gt;SetFont('Times');<BR>
-//Arial bold 14<BR>
+//Arial grassetto 14<BR>
 $pdf-&gt;SetFont('Arial','B',14);<BR>
-//Removes bold<BR>
+//Rimuove il grassetto<BR>
 $pdf-&gt;SetFont('');<BR>
-//Times bold, italic and underlined 14<BR>
+//Times grassetto, corsivo e sottolineato 14<BR>
 $pdf-&gt;SetFont('Times','BIU');
 </TT>
 </TD></TR></TABLE><BR>
-<H4>See also</H4>
+<H4 CLASS='st'>Vedi anche</H4>
 <A HREF="addfont.htm">AddFont()</A>,
 <A HREF="setfontsize.htm">SetFontSize()</A>,
 <A HREF="cell.htm">Cell()</A>,
@@ -98,6 +99,6 @@ $pdf-&gt;SetFont('Times','BIU');
 <A HREF="write.htm">Write()</A>.
 <H6></H6>
 <HR>
-<DIV ALIGN="CENTER"><A HREF="index.htm">Index</A></DIV>
+<DIV ALIGN="CENTER"><A HREF="index.htm">Indice</A></DIV>
 </BODY>
 </HTML>

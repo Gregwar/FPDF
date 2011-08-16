@@ -7,35 +7,35 @@
 <BODY>
 <H2>Header</H2>
 <TT>Header()</TT>
-<H4>Version</H4>
+<H4 CLASS='st'>Versione</H4>
 1.0
-<H4>Description</H4>
-This method is used to render the page header. It is automatically called by AddPage() and
-should not be called directly by the application. The implementation in FPDF is empty, so
-you have to subclass it and override the method if you want a specific processing.
-<H4>Example</H4>
+<H4 CLASS='st'>Descrizione</H4>
+Questo metodo viene utilizzato per disegnare l'intestazione della pagina. Viene chiamato automaticamente
+da AddPage() e non dovrebbe venire chiamato direttamente dall'applicazione. L'implementazione in FPDF
+è lasciata vuota, quindi bisogna subclassarla e sovrascriverne il metodo se si desidera un processo particolare.
+<H4 CLASS='st'>Esempio</H4>
 <TABLE WIDTH="100%" BGCOLOR="#E0E0E0"><TR><TD>
 <TT>
 class PDF extends FPDF<BR>
 {<BR>
 function Header()<BR>
 {<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;//Select Arial bold 15<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;//Seleziona Arial grassetto 15<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;$this-&gt;SetFont('Arial','B',15);<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;//Move to the right<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;//Muove verso destra<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;$this-&gt;Cell(80);<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;//Framed title<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;//Titolo in riquadro<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;$this-&gt;Cell(30,10,'Title',1,0,'C');<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;//Line break<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;//Interruzione di linea<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;$this-&gt;Ln(20);<BR>
 }<BR>
 }
 </TT>
 </TD></TR></TABLE><BR>
-<H4>See also</H4>
+<H4 CLASS='st'>Vedi anche</H4>
 <A HREF="footer.htm">Footer()</A>.
 <H6></H6>
 <HR>
-<DIV ALIGN="CENTER"><A HREF="index.htm">Index</A></DIV>
+<DIV ALIGN="CENTER"><A HREF="index.htm">Indice</A></DIV>
 </BODY>
 </HTML>

@@ -7,41 +7,42 @@
 <BODY>
 <H2>SetDisplayMode</H2>
 <TT>SetDisplayMode(<B>mixed</B> zoom [, <B>string</B> layout])</TT>
-<H4>Version</H4>
+<H4 CLASS='st'>Versione</H4>
 1.2
-<H4>Description</H4>
-Defines the way the document is to be displayed by the viewer. The zoom level can be set: pages can be
-displayed entirely on screen, occupy the full width of the window, use real size, be scaled by a
-specific zooming factor or use viewer default (configured in the Preferences menu of Acrobat).
-The page layout can be specified too: single at once, continuous display, two columns or viewer
-default.
+<H4 CLASS='st'>Descrizione</H4>
+Definisce la modalità in cui il documento verrà mostrato sul viewer. E' possibile impostare il
+livello dello zoom: le pagine possono essere mostrate interamente sullo schermo, a tutta pagina,
+utilizzare le dimensioni reali, rappresentate in scala con un fattore dello zoom specifico oppure
+utilizzare i valori di default del viewer (come configurato nel menu Preferences di Acrobat).
+E' possibile specificare anche il layout di pagina: una per volta, visualizzazione continua, due
+colonne o default del viewer.
 <BR>
-By default, documents use the full width mode with continuous display.
-<H4>Parameters</H4>
+Per default, i documenti utilizzano la modalità a tutta pagina e a visualizzazione continua.
+<H4 CLASS='st'>Parametri</H4>
 <TT><U>zoom</U></TT>
 <BLOCKQUOTE>
-The zoom to use. It can be one of the following string values:
+Lo zoom da usare. Può essere uno dei seguenti valori di stringa:
 <UL>
-<LI><TT>fullpage</TT>: displays the entire page on screen
-<LI><TT>fullwidth</TT>: uses maximum width of window
-<LI><TT>real</TT>: uses real size (equivalent to 100% zoom)
-<LI><TT>default</TT>: uses viewer default mode
+<LI><TT>fullpage</TT>: mostra a schermo l'intera pagina
+<LI><TT>fullwidth</TT>: a tutta pagina
+<LI><TT>real</TT>: utilizza le dimensioni reali (equivalente a zoom=100%)
+<LI><TT>default</TT>: utilizza la modalità di default del viewer
 </UL>
-or a number indicating the zooming factor to use.
+o un numero indicante il livello dello zoom da usare.
 </BLOCKQUOTE>
 <TT><U>layout</U></TT>
 <BLOCKQUOTE>
-The page layout. Possible values are:
+Il layout di pagina. Possibili valori sono:
 <UL>
-<LI><TT>single</TT>: displays one page at once
-<LI><TT>continuous</TT>: displays pages continuously
-<LI><TT>two</TT>: displays two pages on two columns
-<LI><TT>default</TT>: uses viewer default mode
+<LI><TT>single</TT>: mostra una pagina per volta
+<LI><TT>continuous</TT>: mostra le pagine in modo continuo
+<LI><TT>two</TT>: mostra due pagine su due colonne
+<LI><TT>default</TT>: utilizza la modalità di default del viewer
 </UL>
-Default value is <TT>continuous</TT>.
+Il valore di default è <TT>continuous</TT>.
 </BLOCKQUOTE>
 <H6></H6>
 <HR>
-<DIV ALIGN="CENTER"><A HREF="index.htm">Index</A></DIV>
+<DIV ALIGN="CENTER"><A HREF="index.htm">Indice</A></DIV>
 </BODY>
 </HTML>

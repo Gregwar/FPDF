@@ -7,88 +7,89 @@
 <BODY>
 <H2>Cell</H2>
 <TT>Cell(<B>float</B> w [, <B>float</B> h [, <B>string</B> txt [, <B>mixed</B> border [, <B>int</B> ln [, <B>string</B> align [, <B>int</B> fill [, <B>mixed</B> link]]]]]]])</TT>
-<H4>Version</H4>
+<H4 CLASS='st'>Versione</H4>
 1.0
-<H4>Description</H4>
-Prints a cell (rectangular area) with optional borders, background color and character string.
-The upper-left corner of the cell corresponds to the current position. The text can be aligned
-or centered. After the call, the current position moves to the right or to the next line. It is
-possible to put a link on the text.
+<H4 CLASS='st'>Descrizione</H4>
+Stampa una cella (area rettangolare) con bordi, colore di sfondo e stringa di caratteri opzionali.
+L'angolo superiore sinistro della cella corrisponde alla posizione corrente. Il testo può essere
+allineato o centrato. Dopo la chiamata, la posizione corrente si sposta a destra o sulla linea
+successiva. E' possibile inserire un link sul testo.
 <BR>
-If automatic page breaking is enabled and the cell goes beyond the limit, a page break is
-done before outputting.
-<H4>Parameters</H4>
+Se l'interruzione di pagina automatica è abilitata e la cella va oltre i limiti, viene inserita una
+interruzione di pagina prima dell'output.
+<H4 CLASS='st'>Parametri</H4>
 <TT><U>w</U></TT>
 <BLOCKQUOTE>
-Cell width. If <TT>0</TT>, the cell extends up to the right margin.
+Larghezza della cella. Se <TT>0</TT>, la cella si estende dalla parte del margine destro.
 </BLOCKQUOTE>
 <TT><U>h</U></TT>
 <BLOCKQUOTE>
-Cell height.
-Default value: <TT>0</TT>.
+Altezza della cella.
+Valore di default: <TT>0</TT>.
 </BLOCKQUOTE>
 <TT><U>txt</U></TT>
 <BLOCKQUOTE>
-String to print.
-Default value: empty string.
+Stringa da stampare.
+Valore di default: stringa vuota.
 </BLOCKQUOTE>
 <TT><U>border</U></TT>
 <BLOCKQUOTE>
-Indicates if borders must be drawn around the cell. The value can be either a number:
+Indica se bisogna tracciare i bordi attorno alla cella. Il valore può essere sia un numero:
 <UL>
-<LI><TT>0</TT>: no border
-<LI><TT>1</TT>: frame
+<LI><TT>0</TT>: nessun bordo
+<LI><TT>1</TT>: cornice
 </UL>
-or a string containing some or all of the following characters (in any order):
+o una stringa contenente alcuni o tutti i seguenti caratteri (in qualsiasi ordine):
 <UL>
-<LI><TT>L</TT>: left
-<LI><TT>T</TT>: top
-<LI><TT>R</TT>: right
-<LI><TT>B</TT>: bottom
+<LI><TT>L</TT>: sinistro
+<LI><TT>T</TT>: superiore
+<LI><TT>R</TT>: destro
+<LI><TT>B</TT>: inferiore
 </UL>
-Default value: <TT>0</TT>.
+Valore di default: <TT>0</TT>.
 </BLOCKQUOTE>
 <TT><U>ln</U></TT>
 <BLOCKQUOTE>
-Indicates where the current position should go after the call. Possible values are:
+Indica la posizione corrente dopo la chiamata. Valori possibili sono:
 <UL>
-<LI><TT>0</TT>: to the right
-<LI><TT>1</TT>: to the beginning of the next line
-<LI><TT>2</TT>: below
+<LI><TT>0</TT>: a destra
+<LI><TT>1</TT>: all'inizio della linea successiva
+<LI><TT>2</TT>: in basso
 </UL>
-Putting <TT>1</TT> is equivalent to putting <TT>0</TT> and calling Ln() just after.
-Default value: <TT>0</TT>.
+Inserire <TT>1</TT> equivale a inserire <TT>0</TT> e chiamare Ln() immediatamente dopo.
+Valore di default: <TT>0</TT>.
 </BLOCKQUOTE>
 <TT><U>align</U></TT>
 <BLOCKQUOTE>
-Allows to center or align the text. Possible values are:
+Permette di centrare o allineare il testo. Possibili valori sono:
 <UL>
-<LI><TT>L</TT> or empty string: left align (default value)
-<LI><TT>C</TT>: center
-<LI><TT>R</TT>: right align
+<LI><TT>L</TT> o stringa vuota: allineamento a sinistra (valore di default)
+<LI><TT>C</TT>: centrato
+<LI><TT>R</TT>: allineamento a destra
 </UL>
 </BLOCKQUOTE>
 <TT><U>fill</U></TT>
 <BLOCKQUOTE>
-Indicates if the cell background must be painted (<TT>1</TT>) or transparent (<TT>0</TT>).
-Default value: <TT>0</TT>.
+Indica se lo sfondo della cella deve essere disegnato (<TT>1</TT>) o deve essere
+trasparente (<TT>0</TT>).
+Valore di default: <TT>0</TT>.
 </BLOCKQUOTE>
 <TT><U>link</U></TT>
 <BLOCKQUOTE>
-URL or identifier returned by AddLink().
+L'URL o l'identificatore restituito da AddLink().
 </BLOCKQUOTE>
-<H4>Example</H4>
+<H4 CLASS='st'>Esempio</H4>
 <TABLE WIDTH="100%" BGCOLOR="#E0E0E0"><TR><TD>
 <TT>
-//Set font<BR>
+//Imposta il font<BR>
 $pdf-&gt;SetFont('Arial','B',16);<BR>
-//Move to 8 cm to the right<BR>
+//Muove a 8 cm dalla destra<BR>
 $pdf-&gt;Cell(80);<BR>
-//Centered text in a framed 20*10 mm cell and line break<BR>
+//Testo centrato in una cella di 20*10 mm e interruzione di linea<BR>
 $pdf-&gt;Cell(20,10,'Title',1,1,'C');
 </TT>
 </TD></TR></TABLE><BR>
-<H4>See also</H4>
+<H4 CLASS='st'>Vedi anche</H4>
 <A HREF="setfont.htm">SetFont()</A>,
 <A HREF="setdrawcolor.htm">SetDrawColor()</A>,
 <A HREF="setfillcolor.htm">SetFillColor()</A>,
@@ -101,6 +102,6 @@ $pdf-&gt;Cell(20,10,'Title',1,1,'C');
 <A HREF="setautopagebreak.htm">SetAutoPageBreak()</A>.
 <H6></H6>
 <HR>
-<DIV ALIGN="CENTER"><A HREF="index.htm">Index</A></DIV>
+<DIV ALIGN="CENTER"><A HREF="index.htm">Indice</A></DIV>
 </BODY>
 </HTML>
