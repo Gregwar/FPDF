@@ -8,25 +8,25 @@
 <body>
 <h1>AcceptPageBreak</h1>
 <code><b>boolean</b> AcceptPageBreak()</code>
-<h2>Descrizione</h2>
-Quando viene raggiunta la condizione per un'interruzione di pagina, viene chiamato il metodo e,
-a seconda del valore restituito, l'interruzione viene eseguita o meno. L'implementazione di
-default restituisce un valore secondo la modalità selezionata in SetAutoPageBreak().
-<BR>
-Questo metodo viene chiamato automaticamente e non dovrebbe venire chiamato direttamente
-dall'applicazione.
-<h2>Esempio</h2>
-Il metodo viene sovrascritto in una classe ereditata allo scopo di ottenere un layout su 3 colonne:
+<h2>Description</h2>
+Lorsqu'une condition de saut de page est remplie, la méthode est appelée, et en fonction de la
+valeur de retour, le saut est effectué ou non. L'implémentation par défaut renvoie une valeur
+selon le mode sélectionné par SetAutoPageBreak().
+<br>
+Cette méthode est appelée automatiquement et ne devrait donc pas être appelée directement par
+l'application.
+<h2>Exemple</h2>
+La méthode est redéfinie dans une classe dérivée afin d'obtenir un formatage sur 3 colonnes :
 <div class="doc-source">
 <pre><code>class PDF extends FPDF
 {
-var $col=0;
+var $col = 0;
 
 function SetCol($col)
 {
-    //Muove la posizione ad una colonna
-    $this-&gt;col=$col;
-    $x=10+$col*65;
+    // Positionnement sur une colonne
+    $this-&gt;col = $col;
+    $x = 10+$col*65;
     $this-&gt;SetLeftMargin($x);
     $this-&gt;SetX($x);
 }
@@ -35,30 +35,30 @@ function AcceptPageBreak()
 {
     if($this-&gt;col&lt;2)
     {
-        //Va alla colonna successiva
+        // Aller à la colonne suivante
         $this-&gt;SetCol($this-&gt;col+1);
         $this-&gt;SetY(10);
         return false;
     }
     else
     {
-        //Ritorna alla prima colonna ed esegue una interruzione di pagina
+        // Retour en première colonne et saut de page
         $this-&gt;SetCol(0);
         return true;
     }
 }
 }
 
-$pdf=new PDF();
+$pdf = new PDF();
 $pdf-&gt;AddPage();
 $pdf-&gt;SetFont('Arial','',12);
 for($i=1;$i&lt;=300;$i++)
-    $pdf-&gt;Cell(0,5,&quot;Line $i&quot;,0,1);
+    $pdf-&gt;Cell(0,5,&quot;Ligne $i&quot;,0,1);
 $pdf-&gt;Output();</code></pre>
 </div>
-<h2>Vedi anche</h2>
+<h2>Voir</h2>
 <a href="setautopagebreak.htm">SetAutoPageBreak()</a>.
 <hr style="margin-top:1.5em">
-<div style="text-align:center"><a href="index.htm">Indice</a></div>
+<div style="text-align:center"><a href="index.htm">Index</a></div>
 </body>
 </html>

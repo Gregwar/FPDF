@@ -8,81 +8,94 @@
 <body>
 <h1>Image</h1>
 <code>Image(<b>string</b> file [, <b>float</b> x [, <b>float</b> y [, <b>float</b> w [, <b>float</b> h [, <b>string</b> type [, <b>mixed</b> link]]]]]])</code>
-<h2>Descrizione</h2>
-Permette di inserire un immagine nella pagina. Le dimensioni possono essere specificate nei seguenti modi:
-<UL>
-<LI>specificando larghezza e altezza (espresse nell'unità di misura scelte)
-<LI>specificando una sola dimensione, l'altra sarà calcolata automaticamente in maniera da mantenere le proporzioni originali
-<LI>senza specificare le dimensioni, in questo caso l'immagine sarà inserita a 72 dpi
-</UL>
-I formati inseribili sono JPEG, PNG e GIF. Per il supporto al formato GIF è richiesta l'estensione GD.
-<BR>
-<BR>
-Per le JPEG, sono consentiti i seguenti colori:
-<UL>
-<LI>scala di grigio
-<LI>true colors (24 bits)
-<LI>CMYK (32 bits)
-</UL>
-Per le PNG, sono consentiti:
-<UL>
-<LI>scala di grigio a 8 bits (256 livelli)
-<LI>indexed colors
-<LI>true colors (24 bits)
-</UL>
-ma non sono supportati:
-<UL>
-<LI>interlacciamento
-<LI>canale alpha
-</UL>
-Nel caso di GIF animata, verrà utilizzato solo il primo frame.<BR>
-<BR>
-Può essere presente un colore trasparente.<BR>
-<BR>
-Se il formato dell'immagine non viene specificato sarà preso dall'estensione del file.<BR>
-E' possibile inserire un link sull'immagine.<BR>
-<BR>
-Osservazione: se un immagine è usata più volte, solo una copia sarà inserita nel file.
-<h2>Parametri</h2>
+<h2>Description</h2>
+Place une image. Les dimensions occupées dans la page peuvent être indiquées de plusieurs manières :
+<ul>
+<li>largeur et hauteur explicites (exprimées dans l'unité utilisateur ou en dpi)</li>
+<li>une dimension explicite, l'autre étant calculée automatiquement afin de respecter les
+proportions de l'image originale</li>
+<li>aucune dimension explicite, auquel cas l'image est dimensionnée en 96 dpi</li>
+</ul>
+Les formats supportés sont le JPEG, le PNG et le GIF. Le GIF nécessite l'extension GD.
+<br>
+<br>
+Pour le JPEG, toutes les variantes sont autorisées :
+<ul>
+<li>niveaux de gris</li>
+<li>couleurs vraies (24 bits)</li>
+<li>CMYK (32 bits)</li>
+</ul>
+Pour le PNG, sont autorisées :
+<ul>
+<li>les images en niveaux de gris sur 8 bits au plus (256 teintes)</li>
+<li>les images en couleurs indexées</li>
+<li>les images en couleurs vraies (24 bits)</li>
+</ul>
+Pour le GIF : en cas de GIF animé, seule la première image est affichée.<br>
+<br>
+La transparence est gérée.<br>
+<br>
+Le format peut être spécifié explicitement ou bien déduit de l'extension du fichier.<br>
+<br>
+Il est possible de mettre un lien sur l'image.<br>
+<br>
+Remarque : si une image est utilisée plusieurs fois, une seule copie est intégrée au document.
+<h2>Paramètres</h2>
 <dl class="param">
 <dt><code>file</code></dt>
 <dd>
-Nome del file che contiene l'immagine.
+Chemin ou URL de l'image.
 </dd>
 <dt><code>x</code></dt>
 <dd>
-Ascissa dell'angolo superiore-sinistro. Se non specificata o pari a <TT>null</TT>, viene utilizzata
-l'ascissa corrente.
+Abscisse du coin supérieur gauche. Si non précisée ou égale à <code>null</code>, l'abscisse courante
+est utilisée.
 </dd>
 <dt><code>y</code></dt>
 <dd>
-Ordinata dell'angolo superiore-sinistro. Se non specificata o pari a <TT>null</TT>, viene utilizzata
-l'ordinata corrente; inoltre, se necessario, prima viene inserita un'interruzione di pagina (in caso
-fosse abilita l'interruzione di pagina automatica) e, dopo la chiamata, le coordinate correnti vengono
-spostate al di sotto dell'immagine.
+Ordonnée du coin supérieur gauche. Si non précisée ou égale à <code>null</code>, l'ordonnée courante
+est utilisée ; de plus, un saut de page est d'abord effectué si nécessaire (en cas de saut de page
+automatique) ; puis, après l'appel, l'ordonnée courante est positionnée en bas de l'image.
 </dd>
 <dt><code>w</code></dt>
 <dd>
-Larghezza dell'immagine nella pagina. Se non viene specificata o uguale a zero, sarà calcolata automaticamente.
+Largeur de l'image dans la page. Il y a trois cas possibles :
+<ul>
+<li>Si la valeur est positive, elle représente la largeur en unité utilisateur</li>
+<li>Si la valeur est négative, sa valeur absolue représente la résolution horizontale en dpi</li>
+<li>Si elle n'est pas indiquée ou vaut zéro, elle est calculée automatiquement</li>
+</ul>
 </dd>
 <dt><code>h</code></dt>
 <dd>
-Altezza dell'immagine nella pagina. Se non viene specificata o uguale a zero, sarà calcolata automaticamente.
+Hauteur de l'image dans la page. Il y a trois cas possibles :
+<ul>
+<li>Si la valeur est positive, elle représente la hauteur en unité utilisateur</li>
+<li>Si la valeur est négative, sa valeur absolue représente la résolution verticale en dpi</li>
+<li>Si elle n'est pas indiquée ou vaut zéro, elle est calculée automatiquement</li>
+</ul>
 </dd>
 <dt><code>type</code></dt>
 <dd>
-Formato immagine. I valori possibili sono (case insensitive): <TT>JPG</TT>, <TT>JPEG</TT>, <TT>PNG</TT> e
-<TT>GIF</TT>.
-Se non specificato, il tipo sarà riferito all'estensione del file.
+Format de l'image. Les valeurs possibles sont (indépendamment de la casse) : <code>JPG</code>,
+<code>JPEG</code>, <code>PNG</code> et <code>GIF</code>.
+S'il n'est pas précisé, le type est déduit de l'extension du fichier.
 </dd>
 <dt><code>link</code></dt>
 <dd>
-URL o identificatore generato da AddLink().
+URL ou identifiant retourné par AddLink().
 </dd>
 </dl>
-<h2>Vedi anche</h2>
+<h2>Exemple</h2>
+<div class="doc-source">
+<pre><code>// Insère un logo en haut à gauche à 300 dpi
+$pdf-&gt;Image('logo.png',10,10,-300);
+// Insère une image dynamique à partir d'une URL
+$pdf-&gt;Image('http://chart.googleapis.com/chart?cht=p3&amp;chd=t:60,40&amp;chs=250x100&amp;chl=Hello|World',60,30,90,0,'PNG');</code></pre>
+</div>
+<h2>Voir</h2>
 <a href="addlink.htm">AddLink()</a>.
 <hr style="margin-top:1.5em">
-<div style="text-align:center"><a href="index.htm">Indice</a></div>
+<div style="text-align:center"><a href="index.htm">Index</a></div>
 </body>
 </html>

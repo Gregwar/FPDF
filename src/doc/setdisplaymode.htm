@@ -8,41 +8,39 @@
 <body>
 <h1>SetDisplayMode</h1>
 <code>SetDisplayMode(<b>mixed</b> zoom [, <b>string</b> layout])</code>
-<h2>Descrizione</h2>
-Definisce la modalità in cui il documento verrà mostrato sul viewer. E' possibile impostare il
-livello dello zoom: le pagine possono essere mostrate interamente sullo schermo, a tutta pagina,
-utilizzare le dimensioni reali, rappresentate in scala con un fattore dello zoom specifico oppure
-utilizzare i valori di default del viewer (come configurato nel menu Preferences di Acrobat).
-E' possibile specificare anche il layout di pagina: una per volta, visualizzazione continua, due
-colonne o default del viewer.
-<BR>
-Per default, i documenti utilizzano la modalità a tutta pagina e a visualizzazione continua.
-<h2>Parametri</h2>
+<h2>Description</h2>
+Contrôle la manière dont le document sera affiché par le lecteur. On peut régler le niveau de
+zoom : afficher la page en entier, occuper toute la largeur de la fenêtre, utiliser la taille
+réelle, choisir un facteur de zoom particulier ou encore utiliser la valeur par défaut de
+l'utilisateur (celle paramétrée dans le menu Préférences d'Adobe Reader). On peut également
+spécifier la disposition des pages : une seule à la fois, affichage continu, pages sur deux
+colonnes ou réglage par défaut.
+<h2>Paramètres</h2>
 <dl class="param">
 <dt><code>zoom</code></dt>
 <dd>
-Lo zoom da usare. Può essere uno dei seguenti valori di stringa:
-<UL>
-<LI><TT>fullpage</TT>: mostra a schermo l'intera pagina
-<LI><TT>fullwidth</TT>: a tutta pagina
-<LI><TT>real</TT>: utilizza le dimensioni reali (equivalente a zoom=100%)
-<LI><TT>default</TT>: utilizza la modalità di default del viewer
-</UL>
-o un numero indicante il livello dello zoom da usare.
+Le zoom à utiliser. Il peut prendre l'une des valeurs chaînes suivantes :
+<ul>
+<li><code>fullpage</code> : affiche entièrement les pages à l'écran</li>
+<li><code>fullwidth</code> : maximise la largeur des pages</li>
+<li><code>real</code> : affiche la taille réelle (équivaut à un zoom de 100%)</li>
+<li><code>default</code> : utilise le mode d'affichage par défaut du lecteur</li>
+</ul>
+ou bien un entier indiquant le facteur de zoom à utiliser.
 </dd>
 <dt><code>layout</code></dt>
 <dd>
-Il layout di pagina. Possibili valori sono:
-<UL>
-<LI><TT>single</TT>: mostra una pagina per volta
-<LI><TT>continuous</TT>: mostra le pagine in modo continuo
-<LI><TT>two</TT>: mostra due pagine su due colonne
-<LI><TT>default</TT>: utilizza la modalità di default del viewer
-</UL>
-Il valore di default è <TT>continuous</TT>.
+La disposition des pages. Les valeurs possibles sont :
+<ul>
+<li><code>single</code> : affiche une seule page à la fois</li>
+<li><code>continuous</code> : affichage continu d'une page à l'autre</li>
+<li><code>two</code> : affiche deux pages sur deux colonnes</li>
+<li><code>default</code> : utilise le mode d'affichage par défaut du lecteur</li>
+</ul>
+La valeur par défaut est <code>default</code>.
 </dd>
 </dl>
 <hr style="margin-top:1.5em">
-<div style="text-align:center"><a href="index.htm">Indice</a></div>
+<div style="text-align:center"><a href="index.htm">Index</a></div>
 </body>
 </html>

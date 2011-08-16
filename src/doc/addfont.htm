@@ -8,48 +8,50 @@
 <body>
 <h1>AddFont</h1>
 <code>AddFont(<b>string</b> family [, <b>string</b> style [, <b>string</b> file]])</code>
-<h2>Descrizione</h2>
-Importa un font TrueType o Type1 e lo rende disponibile. E' necessario generare prima un file di
-definizione di font con la utility makefont.php.
-<BR>
-Il file di definizione (e lo stesso file del font quando compreso) deve essere presente nella directory delle fonts.
-Se non può essere trovato, viene generato l'errore "Could not include font definition file".
-<h2>Parametri</h2>
+<h2>Description</h2>
+Importe une police TrueType, OpenType ou Type1 et la rend disponible. Il faut au préalable avoir généré
+un fichier de définition de police avec l'utilitaire MakeFont.
+<br>
+Le fichier de définition (ainsi que le fichier de police en cas d'incorporation) doit être présent
+dans le répertoire des polices. S'il n'est pas trouvé, l'erreur "Could not include font definition file"
+est renvoyée.
+<h2>Paramètres</h2>
 <dl class="param">
 <dt><code>family</code></dt>
 <dd>
-Famiglia del font. Il nome può essere scelto arbitrariamente. Se viene indicato un nome di una famiglia
-standard, verrà sovrascritto il font corrispondente.
+Famille de la police. Le nom peut être choisi arbitrairement. S'il est celui d'une famille
+standard, la police correspondante sera masquée.
 </dd>
 <dt><code>style</code></dt>
 <dd>
-Stile del font. Possibili valori sono (case insensitive):
-<UL>
-<LI>stringa vuota: normale
-<LI><TT>B</TT>: grassetto
-<LI><TT>I</TT>: corsivo
-<LI><TT>BI</TT> o <TT>IB</TT>: grassetto corsivo
-</UL>
-Il valore di default è normale.
+Style de la police. Les valeurs possibles sont (indépendamment de la casse) :
+<ul>
+<li>chaîne vide : normal</li>
+<li><code>B</code> : gras</li>
+<li><code>I</code> : italique</li>
+<li><code>BI</code> ou <code>IB</code> : gras italique</li>
+</ul>
+La valeur par défaut est le style normal.
 </dd>
 <dt><code>file</code></dt>
 <dd>
-Il file di definizione del font.
-<BR>
-Per default, il nome viene costruito dalla famiglia e dallo stile, in minuscolo e senza spazi.
+Le fichier de définition de police.
+<br>
+Par défaut, le nom est construit à partir du nom de la famille et du style, en minuscules et
+sans espace.
 </dd>
 </dl>
-<h2>Esempio</h2>
+<h2>Exemple</h2>
 <div class="doc-source">
 <pre><code>$pdf-&gt;AddFont('Comic','I');</code></pre>
 </div>
-è equivalente a:
+est équivalent à :
 <div class="doc-source">
 <pre><code>$pdf-&gt;AddFont('Comic','I','comici.php');</code></pre>
 </div>
-<h2>Vedi anche</h2>
+<h2>Voir</h2>
 <a href="setfont.htm">SetFont()</a>.
 <hr style="margin-top:1.5em">
-<div style="text-align:center"><a href="index.htm">Indice</a></div>
+<div style="text-align:center"><a href="index.htm">Index</a></div>
 </body>
 </html>

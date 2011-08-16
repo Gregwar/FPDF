@@ -5,79 +5,77 @@ class PDF extends FPDF
 {
 function Header()
 {
-	global $title;
+	global $titre;
 
-	//Arial bold 15
+	// Arial gras 15
 	$this->SetFont('Arial','B',15);
-	//Calculate width of title and position
-	$w=$this->GetStringWidth($title)+6;
+	// Calcul de la largeur du titre et positionnement
+	$w = $this->GetStringWidth($titre)+6;
 	$this->SetX((210-$w)/2);
-	//Colors of frame, background and text
+	// Couleurs du cadre, du fond et du texte
 	$this->SetDrawColor(0,80,180);
 	$this->SetFillColor(230,230,0);
 	$this->SetTextColor(220,50,50);
-	//Thickness of frame (1 mm)
+	// Epaisseur du cadre (1 mm)
 	$this->SetLineWidth(1);
-	//Title
-	$this->Cell($w,9,$title,1,1,'C',true);
-	//Line break
+	// Titre
+	$this->Cell($w,9,$titre,1,1,'C',true);
+	// Saut de ligne
 	$this->Ln(10);
 }
 
 function Footer()
 {
-	//Position at 1.5 cm from bottom
+	// Positionnement à 1,5 cm du bas
 	$this->SetY(-15);
-	//Arial italic 8
+	// Arial italique 8
 	$this->SetFont('Arial','I',8);
-	//Text color in gray
+	// Couleur du texte en gris
 	$this->SetTextColor(128);
-	//Page number
+	// Numéro de page
 	$this->Cell(0,10,'Page '.$this->PageNo(),0,0,'C');
 }
 
-function ChapterTitle($num,$label)
+function TitreChapitre($num, $libelle)
 {
-	//Arial 12
+	// Arial 12
 	$this->SetFont('Arial','',12);
-	//Background color
+	// Couleur de fond
 	$this->SetFillColor(200,220,255);
-	//Title
-	$this->Cell(0,6,"Chapter $num : $label",0,1,'L',true);
-	//Line break
+	// Titre
+	$this->Cell(0,6,"Chapitre $num : $libelle",0,1,'L',true);
+	// Saut de ligne
 	$this->Ln(4);
 }
 
-function ChapterBody($file)
+function CorpsChapitre($fichier)
 {
-	//Read text file
-	$f=fopen($file,'r');
-	$txt=fread($f,filesize($file));
-	fclose($f);
-	//Times 12
+	// Lecture du fichier texte
+	$txt = file_get_contents($fichier);
+	// Times 12
 	$this->SetFont('Times','',12);
-	//Output justified text
+	// Sortie du texte justifié
 	$this->MultiCell(0,5,$txt);
-	//Line break
+	// Saut de ligne
 	$this->Ln();
-	//Mention in italics
+	// Mention en italique
 	$this->SetFont('','I');
-	$this->Cell(0,5,'(end of excerpt)');
+	$this->Cell(0,5,"(fin de l'extrait)");
 }
 
-function PrintChapter($num,$title,$file)
+function AjouterChapitre($num, $titre, $fichier)
 {
 	$this->AddPage();
-	$this->ChapterTitle($num,$title);
-	$this->ChapterBody($file);
+	$this->TitreChapitre($num,$titre);
+	$this->CorpsChapitre($fichier);
 }
 }
 
-$pdf=new PDF();
-$title='20000 Leagues Under the Seas';
-$pdf->SetTitle($title);
+$pdf = new PDF();
+$titre = 'Vingt mille lieues sous les mers';
+$pdf->SetTitle($titre);
 $pdf->SetAuthor('Jules Verne');
-$pdf->PrintChapter(1,'A RUNAWAY REEF','20k_c1.txt');
-$pdf->PrintChapter(2,'THE PROS AND CONS','20k_c2.txt');
+$pdf->AjouterChapitre(1,'UN ÉCUEIL FUYANT','20k_c1.txt');
+$pdf->AjouterChapitre(2,'LE POUR ET LE CONTRE','20k_c2.txt');
 $pdf->Output();
 ?>

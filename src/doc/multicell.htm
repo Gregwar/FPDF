@@ -8,61 +8,63 @@
 <body>
 <h1>MultiCell</h1>
 <code>MultiCell(<b>float</b> w, <b>float</b> h, <b>string</b> txt [, <b>mixed</b> border [, <b>string</b> align [, <b>boolean</b> fill]]])</code>
-<h2>Descrizione</h2>
-Questo metodo permette di stampare del testo con interruzioni di linea. Possono essere automatiche
-(non appena il testo raggiunge il margine destro della cella) o esplicite (tramite il carattere \n).
-Vengono inserite tante celle quante necessarie, una sotto l'altra.
-<BR>
-Il testo può essere allineato, centrato o giustificato. E' possibile inserire i bordi e lo sfondo al
-blocco di celle.
-<h2>Parametri</h2>
+<h2>Description</h2>
+Cette méthode permet d'imprimer du texte avec des retours à la ligne. Ceux-ci peuvent être
+automatiques (dès que le texte atteint le bord droit de la cellule) ou explicites (via le
+caractère \n). Autant de cellules que nécessaire sont imprimées, les unes en dessous des
+autres.
+<br>
+Le texte peut être aligné, centré ou justifié. Le bloc de cellules peut être encadré et le
+fond coloré.
+<h2>Paramètres</h2>
 <dl class="param">
 <dt><code>w</code></dt>
 <dd>
-Larghezza delle celle. Se <TT>0</TT>, si estendono dalla parte del margine destro della pagina.
+Largeur des cellules. Si elle vaut <code>0</code>, elles s'étendent jusqu'à la marge droite de
+la page.
 </dd>
 <dt><code>h</code></dt>
 <dd>
-Altezza delle celle.
+Hauteur des cellules.
 </dd>
 <dt><code>txt</code></dt>
 <dd>
-Stringa da stampare.
+Chaîne à imprimer.
 </dd>
 <dt><code>border</code></dt>
 <dd>
-Indica se bisogna disegnare i bordi attorno al blocco di celle. Il valore può essere sia un numero:
-<UL>
-<LI><TT>0</TT>: nessun bordo
-<LI><TT>1</TT>: cornice
-</UL>
-o una stringa contenente alcuni o tutti i seguenti caratteri (in qualsiasi ordine):
-<UL>
-<LI><TT>L</TT>: sinistro
-<LI><TT>T</TT>: superiore
-<LI><TT>R</TT>: destro
-<LI><TT>B</TT>: inferiore
-</UL>
-Valore di default: <TT>0</TT>.
+Indique si des bords doivent être tracés autour du bloc de cellules. La valeur peut être soit un
+nombre :
+<ul>
+<li><code>0</code> : aucun bord</li>
+<li><code>1</code> : cadre</li>
+</ul>
+soit une chaîne contenant certains ou tous les caractères suivants (dans un ordre quelconque) :
+<ul>
+<li><code>L</code> : gauche</li>
+<li><code>T</code> : haut</li>
+<li><code>R</code> : droit</li>
+<li><code>B</code> : bas</li>
+</ul>
+La valeur par défaut est <code>0</code>.
 </dd>
 <dt><code>align</code></dt>
 <dd>
-Imposta l'allineamento del testo. Possibili valori sono:
-<UL>
-<LI><TT>L</TT>: allineamento a sinistra
-<LI><TT>C</TT>: centrato
-<LI><TT>R</TT>: allienamento a destra
-<LI><TT>J</TT>: giustificazione (valore di default)
-</UL>
+Contrôle l'alignement du texte. Les valeurs possibles sont :
+<ul>
+<li><code>L</code> : alignement à gauche</li>
+<li><code>C</code> : centrage</li>
+<li><code>R</code> : alignement à droite</li>
+<li><code>J</code> : justification (valeur par défaut)</li>
+</ul>
 </dd>
 <dt><code>fill</code></dt>
 <dd>
-Indica se lo sfondo della cella deve essere disegnato (<TT>true</TT>) o deve essere
-trasparente (<TT>false</TT>).
-Valore di default: <TT>false</TT>.
+Indique si le fond des cellules doit être coloré (<code>true</code>) ou transparent (<code>false</code>).
+Valeur par défaut : <code>false</code>.
 </dd>
 </dl>
-<h2>Vedi anche</h2>
+<h2>Voir</h2>
 <a href="setfont.htm">SetFont()</a>,
 <a href="setdrawcolor.htm">SetDrawColor()</a>,
 <a href="setfillcolor.htm">SetFillColor()</a>,
@@ -72,6 +74,6 @@ Valore di default: <TT>false</TT>.
 <a href="write.htm">Write()</a>,
 <a href="setautopagebreak.htm">SetAutoPageBreak()</a>.
 <hr style="margin-top:1.5em">
-<div style="text-align:center"><a href="index.htm">Indice</a></div>
+<div style="text-align:center"><a href="index.htm">Index</a></div>
 </body>
 </html>

@@ -8,87 +8,89 @@
 <body>
 <h1>Cell</h1>
 <code>Cell(<b>float</b> w [, <b>float</b> h [, <b>string</b> txt [, <b>mixed</b> border [, <b>int</b> ln [, <b>string</b> align [, <b>boolean</b> fill [, <b>mixed</b> link]]]]]]])</code>
-<h2>Descrizione</h2>
-Stampa una cella (area rettangolare) con bordi, colore di sfondo e stringa di caratteri opzionali.
-L'angolo superiore sinistro della cella corrisponde alla posizione corrente. Il testo può essere
-allineato o centrato. Dopo la chiamata, la posizione corrente si sposta a destra o sulla linea
-successiva. E' possibile inserire un link sul testo.
-<BR>
-Se l'interruzione di pagina automatica è abilitata e la cella va oltre i limiti, viene inserita una
-interruzione di pagina prima dell'output.
-<h2>Parametri</h2>
+<h2>Description</h2>
+Imprime une cellule (zone rectangulaire) avec éventuellement des bords, un fond et une chaîne
+de caractères. Le coin supérieur gauche de la cellule correspond à la position courante. Le
+texte peut être aligné ou centré. Après l'appel, la position courante se déplace à droite
+ou un retour à la ligne est effectué. Il est possible de mettre un lien sur le texte.
+<br>
+Si le saut de page automatique est activé et que la cellule dépasse le seuil de déclenchement,
+un saut de page est effectué avant de l'imprimer.
+<h2>Paramètres</h2>
 <dl class="param">
 <dt><code>w</code></dt>
 <dd>
-Larghezza della cella. Se <TT>0</TT>, la cella si estende dalla parte del margine destro.
+Largeur de la cellule. Si elle vaut <code>0</code>, la cellule s'étend jusqu'à la marge droite de
+la page.
 </dd>
 <dt><code>h</code></dt>
 <dd>
-Altezza della cella.
-Valore di default: <TT>0</TT>.
+Hauteur de la cellule.
+Valeur par défaut : <code>0</code>.
 </dd>
 <dt><code>txt</code></dt>
 <dd>
-Stringa da stampare.
-Valore di default: stringa vuota.
+Chaîne à imprimer.
+Valeur par défaut : chaîne vide.
 </dd>
 <dt><code>border</code></dt>
 <dd>
-Indica se bisogna tracciare i bordi attorno alla cella. Il valore può essere sia un numero:
-<UL>
-<LI><TT>0</TT>: nessun bordo
-<LI><TT>1</TT>: cornice
-</UL>
-o una stringa contenente alcuni o tutti i seguenti caratteri (in qualsiasi ordine):
-<UL>
-<LI><TT>L</TT>: sinistro
-<LI><TT>T</TT>: superiore
-<LI><TT>R</TT>: destro
-<LI><TT>B</TT>: inferiore
-</UL>
-Valore di default: <TT>0</TT>.
+Indique si des bords doivent être tracés autour de la cellule. La valeur peut être soit un
+nombre :
+<ul>
+<li><code>0</code> : aucun bord</li>
+<li><code>1</code> : cadre</li>
+</ul>
+soit une chaîne contenant certains ou tous les caractères suivants (dans un ordre quelconque) :
+<ul>
+<li><code>L</code> : gauche</li>
+<li><code>T</code> : haut</li>
+<li><code>R</code> : droit</li>
+<li><code>B</code> : bas</li>
+</ul>
+La valeur par défaut est <code>0</code>.
 </dd>
 <dt><code>ln</code></dt>
 <dd>
-Indica la posizione corrente dopo la chiamata. Valori possibili sono:
-<UL>
-<LI><TT>0</TT>: a destra
-<LI><TT>1</TT>: all'inizio della linea successiva
-<LI><TT>2</TT>: in basso
-</UL>
-Inserire <TT>1</TT> equivale a inserire <TT>0</TT> e chiamare Ln() immediatamente dopo.
-Valore di default: <TT>0</TT>.
+Indique où se déplace la position courante après l'appel à la méthode. Les valeurs possibles
+sont :
+<ul>
+<li><code>0</code> : à droite</li>
+<li><code>1</code> : au début de la ligne suivante</li>
+<li><code>2</code> : en dessous</li>
+</ul>
+Mettre <code>1</code> est équivalent à mettre <code>0</code> et appeler la méthode Ln() juste après.
+La valeur par défaut est <code>0</code>.
 </dd>
 <dt><code>align</code></dt>
 <dd>
-Permette di centrare o allineare il testo. Possibili valori sono:
-<UL>
-<LI><TT>L</TT> o stringa vuota: allineamento a sinistra (valore di default)
-<LI><TT>C</TT>: centrato
-<LI><TT>R</TT>: allineamento a destra
-</UL>
+Permet de centrer ou d'aligner le texte. Les valeurs possibles sont :
+<ul>
+<li><code>L</code> ou chaîne vide : alignement à gauche (valeur par défaut)</li>
+<li><code>C</code> : centrage</li>
+<li><code>R</code> : alignement à droite</li>
+</ul>
 </dd>
 <dt><code>fill</code></dt>
 <dd>
-Indica se lo sfondo della cella deve essere disegnato (<TT>true</TT>) o deve essere
-trasparente (<TT>false</TT>).
-Valore di default: <TT>false</TT>.
+Indique si le fond de la cellule doit être coloré (<code>true</code>) ou transparent (<code>false</code>).
+Valeur par défaut : <code>false</code>.
 </dd>
 <dt><code>link</code></dt>
 <dd>
-L'URL o l'identificatore restituito da AddLink().
+URL ou identifiant retourné par AddLink().
 </dd>
 </dl>
-<h2>Esempio</h2>
+<h2>Exemple</h2>
 <div class="doc-source">
-<pre><code>//Imposta il font
+<pre><code>// Sélection de la police
 $pdf-&gt;SetFont('Arial','B',16);
-//Muove a 8 cm dalla destra
+// Décalage de 8 cm à droite
 $pdf-&gt;Cell(80);
-//Testo centrato in una cella di 20*10 mm e interruzione di linea
-$pdf-&gt;Cell(20,10,'Title',1,1,'C');</code></pre>
+// Texte centré dans une cellule 20*10 mm encadrée et retour à la ligne
+$pdf-&gt;Cell(20,10,'Titre',1,1,'C');</code></pre>
 </div>
-<h2>Vedi anche</h2>
+<h2>Voir</h2>
 <a href="setfont.htm">SetFont()</a>,
 <a href="setdrawcolor.htm">SetDrawColor()</a>,
 <a href="setfillcolor.htm">SetFillColor()</a>,
@@ -100,6 +102,6 @@ $pdf-&gt;Cell(20,10,'Title',1,1,'C');</code></pre>
 <a href="write.htm">Write()</a>,
 <a href="setautopagebreak.htm">SetAutoPageBreak()</a>.
 <hr style="margin-top:1.5em">
-<div style="text-align:center"><a href="index.htm">Indice</a></div>
+<div style="text-align:center"><a href="index.htm">Index</a></div>
 </body>
 </html>
